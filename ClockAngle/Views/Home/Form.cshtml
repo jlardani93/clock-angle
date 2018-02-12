@@ -10,10 +10,9 @@
     </div>
     <hr>
     <div class="row">
-        <div class="row">
-            <div class="col-md-12">
+        <div class="col-md-12">
                 <form  action="/Clock/Create" method="post">
-                    <div class="form-group">
+                    <div class="form-group" id="hourFormGroup">
                         <label for="hour">Hour</label>
                         <select id="hour" name="hour">
                             @for (var i = 1; i <= 12; i++)
@@ -34,6 +33,5 @@
                     <button type="submit" class="btn">View Clock!</button>
                 </form>
             </div>
-        </div>
     </div>
 </div>

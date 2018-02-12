@@ -1,0 +1,31 @@
+@{
+    Layout = "_Layout";
+}
+
+<div class="container">
+    <div class="row" id="clockRow">
+        <div class="col-md-12">
+            <div id="clockContainer">
+                <img src="/img/naked-clock.png" id="nakedClock" alt="">
+                <img src="/img/clock-hand.png" id="hourHand" alt="">
+                <img src="/img/clock-hand.png" id="minuteHand" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h2>The angle between your two clock hands is &deg;@Model.CalculateAngle()</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <a href="/"><button type="button" class="btn">Set a New time</button></a>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    var minuteModifier = @(Model.GetMinute())/2;
+    $("#hourHand").css("transform", "rotate(@(Model.GetHourAngle())deg)");
+    $("#minuteHand").css("transform", "rotate(@(Model.GetMinuteAngle())deg)");
+</script>
